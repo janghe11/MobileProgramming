@@ -6,13 +6,10 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="눌러주세요." />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="안녕하세요" />
 </LinearLayout>
