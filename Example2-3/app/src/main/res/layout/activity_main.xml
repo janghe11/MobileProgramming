@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/googleBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google 홈페이지 열기" />
+
+    <Button
+        android:id="@+id/emrCallBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="119 응급전화 걸기" />
+
+    <Button
+        android:id="@+id/opengrBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="갤러리 열기" />
+
+    <Button
+        android:id="@+id/exitBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="끝내기"/>
+</LinearLayout>

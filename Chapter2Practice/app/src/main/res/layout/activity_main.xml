@@ -4,7 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:showIn="@layout/activity_main">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#000000"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </android.support.design.widget.AppBarLayout>
 
     <EditText
         android:id="@+id/editText"
@@ -30,18 +45,17 @@
 
         <RadioButton
             android:id="@+id/kitkatRadio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="킷캣"/>
+            android:checked="true"
+            android:text="킷캣" />
 
         <RadioButton
-            android:id="@+id/lolliRadio"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/lollipopRadio"
+            android:text="롤리팝" />
     </RadioGroup>
 
     <ImageView
         android:id="@+id/image"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:src="@drawable/android_kitkat"/>
 </LinearLayout>
