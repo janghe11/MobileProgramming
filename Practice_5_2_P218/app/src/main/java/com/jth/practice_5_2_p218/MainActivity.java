@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -40,7 +41,51 @@ public class MainActivity extends ActionBarActivity {
         btnDiv = (Button) findViewById(R.id.btnDiv);
 
         textResult = (TextView) findViewById(R.id.textResult);
+/*
+        btnAdd.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) + Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
+            }
+        });
 
+        btnSub.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) - Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
+            }
+        });
+
+        btnMul.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) * Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
+            }
+        });
+
+        btnDiv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                num1 = edit1.getText().toString();
+                num2 = edit2.getText().toString();
+                result = Integer.parseInt(num1) / Integer.parseInt(num2);
+                textResult.setText("계산 결과 : " + result.toString());
+                return false;
+            }
+        });
+*/
         for (i = 0; i < numBtnIDs.length; i++) {
             numButtons[i] = (Button) findViewById(numBtnIDs[i]);
         }
@@ -66,7 +111,7 @@ public class MainActivity extends ActionBarActivity {
         }
     }
 
-    public int calculating (View v) {
+    public void calculating (View v) {
         num1 = edit1.getText().toString();
         num2 = edit2.getText().toString();
 
@@ -90,7 +135,5 @@ public class MainActivity extends ActionBarActivity {
             default:
                 Toast.makeText(getApplicationContext(), "계산 오류거나 0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
         }
-
-        return 0;
     }
 }
