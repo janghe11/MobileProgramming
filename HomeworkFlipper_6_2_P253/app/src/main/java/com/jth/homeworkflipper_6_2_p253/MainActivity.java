@@ -135,28 +135,30 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void calculating (View v) {
-        num1 = edit1.getText().toString();
-        num2 = edit2.getText().toString();
+        try{
+            num1 = edit1.getText().toString();
+            num2 = edit2.getText().toString();
 
-        switch (v.getId()) {
-            case R.id.btnAdd:
-                result = Integer.parseInt(num1) + Integer.parseInt(num2);
-                textResult.setText("계산 결과 :" + result.toString());
-                break;
-            case R.id.btnSub:
-                result = Integer.parseInt(num1) - Integer.parseInt(num2);
-                textResult.setText("계산 결과 :" + result.toString());
-                break;
-            case R.id.btnMul:
-                result = Integer.parseInt(num1) * Integer.parseInt(num2);
-                textResult.setText("계산 결과 :" + result.toString());
-                break;
-            case R.id.btnDiv:
-                result = Integer.parseInt(num1) / Integer.parseInt(num2);
-                textResult.setText("계산 결과 :" + result.toString());
-                break;
-            default:
-                Toast.makeText(getApplicationContext(), "계산 오류거나 0으로 나눌 수 없습니다", Toast.LENGTH_SHORT).show();
+            switch (v.getId()) {
+                case R.id.btnAdd:
+                    result = Integer.parseInt(num1) + Integer.parseInt(num2);
+                    textResult.setText("계산 결과 :" + result.toString());
+                    break;
+                case R.id.btnSub:
+                    result = Integer.parseInt(num1) - Integer.parseInt(num2);
+                    textResult.setText("계산 결과 :" + result.toString());
+                    break;
+                case R.id.btnMul:
+                    result = Integer.parseInt(num1) * Integer.parseInt(num2);
+                    textResult.setText("계산 결과 :" + result.toString());
+                    break;
+                case R.id.btnDiv:
+                    result = Integer.parseInt(num1) / Integer.parseInt(num2);
+                    textResult.setText("계산 결과 :" + result.toString());
+                    break;
+            }
+        } catch (NumberFormatException e) {
+            Toast.makeText(getApplicationContext(), "숫자만 넣어주시거나 빈칸은 계산할 수 없습니다.", Toast.LENGTH_SHORT).show();
         }
     }
 
