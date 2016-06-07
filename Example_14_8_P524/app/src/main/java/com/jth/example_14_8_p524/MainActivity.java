@@ -11,7 +11,10 @@ import android.telephony.SmsMessage;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
     List<String> smsList;
     ArrayAdapter<String> adapter;
 
+    TextView textView;
+    BatteryChangeReceiver br;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle("배터리 상태 체크");
 
         //edtBattery = (EditText) findViewById(R.id.editBattery);
+        /*
         listView = (ListView) findViewById(R.id.listView);
 
         smsList = new ArrayList<>();
@@ -39,8 +46,18 @@ public class MainActivity extends AppCompatActivity {
         IntentFilter filter = new IntentFilter();
         filter.addAction("android.provider.Telephony.SMS_RECEIVED");
         registerReceiver(smsReceiver, filter);
-    }
+        */
 
+        textView = (TextView) findViewById(R.id.text);
+        br = new BatteryChangeReceiver();
+        br.setOnBatteryChangeListener(new BatteryChangeReceiver.OnBatteryChangeListener() {
+            @Override
+            public void onReceive(int remain) {
+                textView.setText(String.format("남은 잔량 : %d %%", remain));
+            }
+        });
+    }
+/*
     BroadcastReceiver smsReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -57,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
             int remain = intent.getIntExtra(BatteryManager.EXTRA_LEVEL, 0);
             edtBattery.setText("현재 충전량 : " + remain + " %\n");
-            */
+
         }
     };
-
+*/
     @Override
     protected void onPause() {
         super.onPause();
@@ -80,6 +97,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(smsReceiver);
+        //unregisterReceiver(smsReceiver);
     }
 }
