@@ -7,25 +7,23 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.jth.example_14_8_p524.MainActivity"
+    tools:context="com.jth.lastproject.MainActivity"
     android:orientation="vertical">
 
-    <!--
-        <ListView
-            android:id="@+id/listView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        </ListView>
-
-        <EditText
-            android:id="@+id/editBattery"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:enabled="false"/>
-         -->
-
     <TextView
-        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LastProject_2반_장태희"/>
+
+    <Button
+        android:id="@+id/btnAddr"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="주소록 가져오기"
+        android:onClick="getAddrList" />
+
+    <ListView
+        android:id="@+id/listName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>
